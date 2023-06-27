@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""MagicClass - computes area and circumference of a circle given radius"""
-
+"""Define a MagicClass matching exactly a bytecode provided by Holberton."""
 
 import math
 
