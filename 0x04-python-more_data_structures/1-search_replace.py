@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+
 def search_replace(my_list, search, replace):
-    new_list = list(map(lamda x: replace if x == search else x, my_list))
-    return (new_list)
+    def find_search(i):
+        return i if i != search else replace
+    return list(map(find_search, my_list))
