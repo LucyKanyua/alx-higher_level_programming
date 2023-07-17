@@ -110,4 +110,29 @@ class Rectangle(Base):
                                 print(" ", end="")
                                 for d in range(self.width):
                                     print("#", end="")
-                                    print()
+                                print()
+
+        def __str__(self):
+            """ returns [Rectangle] (<id>) <x>/<y> - <width>/<height>"""
+
+            r = "[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__,
+                    self.id, self.x, self.y, self.width, self.height)
+            return r
+
+        def update(self, *args, **kwargs):
+            """Updates Rectangle attributes contained in args, or kwargs
+            args: new attributes list
+            kwargs: a dict of the new attributes
+            """
+            if args:
+                atts = ['id', 'width', 'height', 'x', 'y']
+                for i in range(len(args)):
+                    setattr(self, atts[i], args[i])
+                    elif kwargs:
+                        for k, v in kwargs.items():
+                            setattr(self, k, v)
+
+            def to_dictionary(self):
+                """returns the dictionary representation of the Rectangle"""
+                return {'id': self.id, 'width': self.width,
+                        'height': self.height, 'x': self.x, 'y': self.y}
